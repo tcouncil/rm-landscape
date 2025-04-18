@@ -1,53 +1,68 @@
 /* Contact Section Styling */
 .contact-section {
-    background-color: #e8f5e9; /* Light green background */
-    color: #006a44; /* Deep green text */
-    padding: 30px;
-    text-align: center;
-  }
-  
-  .contact-section h2 {
-    font-size: 24px;
-    margin-bottom: 20px;
-    text-transform: uppercase;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Text shadow for emphasis */
-  }
-  
-  .contact-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
-  }
-  
-  .contact-form label {
-    font-size: 16px;
-    font-weight: bold;
-    margin-bottom: 5px;
-  }
-  
-  .contact-form input,
-  .contact-form textarea {
-    width: 100%;
-    max-width: 500px;
-    padding: 10px;
-    border: 1px solid #a3c99c; /* Light green border */
-    border-radius: 5px;
-    font-size: 14px;
-  }
-  
-  .contact-form button {
-    background-color: #006a44; /* Deep green button */
-    color: #ffffff; /* White text */
-    border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: background-color 0.3s ease-in-out;
-  }
-  
-  .contact-form button:hover {
-    background-color: #a3c99c; /* Light green hover effect */
-  }
-  
+  background: linear-gradient(#292929d7, #9b9b9bd8);
+  color: #ccf38d;
+  padding: 30px;
+  text-align: center;
+  font-family: "Alegreya SC", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.contact-section h2 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  font-family: "Alegreya SC", serif;
+  font-weight: 400;
+  font-style: normal;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  /* Text shadow for emphasis */
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.contact-form label {
+  font-size: 16px;
+  font-family: "Alegreya SC", serif;
+  font-weight: 400;
+  font-style: normal;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  margin-bottom: 5px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  max-width: 500px;
+  padding: 10px;
+  border: 1px solid #a3c99c;
+  /* Light green border */
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.contact-form button {
+  background-color: #2a4400;
+  /* Deep green button */
+  color: #ccf38d;
+  /* White text */
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.contact-form button:hover {
+  color: #daff9f;
+  /* White text */
+  font-style: italic;
+  background-color: #1b2c00be;
+  border: 1px solid rgba(0, 0, 0, 0.445);
+}

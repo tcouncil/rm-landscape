@@ -4,6 +4,31 @@ html {
 
 }
 
-body{
+body {
   margin: 0;
+}
+
+@media only screen and (max-width: 456px) {
+  .breadcrumb-list {
+    gap: 0px !important;
+    display: flex;
+    flex-direction: column;
+  }
+
+  html {
+    width: 100%;
+  }
+
+  .breadcrumb-link {
+    font-size: 1.3rem;
+    margin: 0;
+  }
+
+  #landing-phrase{
+    font-size: 2.2rem !important;
+  }
+
+  #landing-text{
+    top:44% !important;
+  }
 }

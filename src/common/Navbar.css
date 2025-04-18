@@ -1,42 +1,71 @@
 /* Navbar Styling */
 .breadcrumb-nav {
-    background-color: #f4f0e5; /* Soft beige background */
-    padding: 10px 20px;
-    border-bottom: 2px solid #a3c99c; /* Earthy green border */
-  }
+  background: linear-gradient(#9b9b9bd8, #292929d7);
+  padding: 10px 20px;
+  border-bottom: 1px solid #9dff00;
+  color: #9dff00;
+  font-family: "Alegreya SC", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1.2rem;
+}
+
+.breadcrumb-list {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  /* Space between breadcrumb items */
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
   
-  .breadcrumb-list {
-    list-style: none;
-    display: flex;
-    gap: 25px; /* Space between breadcrumb items */
-    align-items: center;
-    justify-content: center;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .breadcrumb-item {
-    font-family: 'Arial', sans-serif;
-    font-size: 18px;
-    color: #575757; /* Neutral text color */
-    display: flex;
-    align-items: center;
-  }
-  
-  .breadcrumb-item h2 {
-    font-size: 24px;
-    font-weight: bold;
-    margin: 0; /* Remove default margin to maintain alignment */
-    color: #006a44; /* Deep green for headline */
-  }
-  
-  .breadcrumb-link {
-    text-decoration: none;
-    color: #006a44; /* Link color */
-    transition: color 0.3s ease-in-out;
-  }
-  
-  .breadcrumb-link:hover {
-    color: #a3c99c; /* Light green hover effect */
-  }
-  
+}
+
+.breadcrumb-item {
+  font-family: "Alegreya SC", serif;
+  font-weight: 400;
+  font-style: normal;
+  display: flex;
+  align-items: center;
+  opacity: 100% !important;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.breadcrumb-item h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 0;
+
+}
+
+.breadcrumb-link {
+  text-decoration: none;
+  transition: color 0.3s ease-in-out;
+  color: #9dff00;
+}
+
+.breadcrumb-link:hover {
+  color: #81d100;
+  font-weight: lighter;
+  /* Light green hover effect */
+}
+
+.tiled-gradient {
+  position: relative; /* Ensure relative positioning for the pseudo-element */
+}
+
+.tiled-gradient::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    url('../images/HolderTile.png');
+  opacity: 0.5; /* Adjust the opacity here */
+  z-index: -1; /* Place behind the content */
+  background-size: cover;
+}

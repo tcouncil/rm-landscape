@@ -3,9 +3,9 @@ import './Navbar.css'
 
 export default function Navbar() {
     return (
-        <nav className="breadcrumb-nav">
+        <nav className="breadcrumb-nav tiled-gradient">
             <ul className="breadcrumb-list">
-                <h2 className="breadcrumb-item">Rocky Mountain Landscape</h2>
+                <h2 className="breadcrumb-item">Front Range Nativescape</h2>
                 <li className="breadcrumb-item">
                     <a href="#about" className="breadcrumb-link">
                         About
