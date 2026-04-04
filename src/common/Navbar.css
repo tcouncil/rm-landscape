@@ -1,71 +1,118 @@
-/* Navbar Styling */
-.breadcrumb-nav {
-  background: linear-gradient(#9b9b9bd8, #292929d7);
-  padding: 10px 20px;
-  border-bottom: 1px solid #9dff00;
-  color: #9dff00;
-  font-family: "Alegreya SC", serif;
-  font-weight: 400;
-  font-style: normal;
-  font-size: 1.2rem;
+/* --------------------------------------------------
+   Soulshine Mountain — Cinematic Navbar
+   -------------------------------------------------- */
+
+.soulshine-nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 50;
+  padding: 12px 0;
+  backdrop-filter: blur(12px);
+  background: rgba(20, 10, 5, 0.35);
+  border-bottom: 1px solid rgba(255, 200, 120, 0.25);
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.4);
 }
 
-.breadcrumb-list {
-  list-style: none;
+/* Inner layout */
+.nav-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 40px;
   display: flex;
-  gap: 25px;
-  /* Space between breadcrumb items */
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
+}
+
+/* Logo */
+.nav-logo {
+  font-size: 1.9rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: #ffe7c2;
+  text-shadow: 0 0 12px rgba(255, 200, 120, 0.45);
+  font-family: "Cormorant Garamond", serif;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+.nav-logo:hover {
+  opacity: 0.85;
+}
+
+/* --------------------------------------------------
+   NAV LINKS (Fixes stacking issue)
+   -------------------------------------------------- */
+
+.nav-links {
+  display: flex;        /* <-- THIS FIXES THE STACKING */
+  gap: 40px;
+  list-style: none;
+  align-items: center;
   margin: 0;
   padding: 0;
-  
 }
 
-.breadcrumb-item {
-  font-family: "Alegreya SC", serif;
-  font-weight: 400;
-  font-style: normal;
-  display: flex;
-  align-items: center;
-  opacity: 100% !important;
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
-.breadcrumb-item h2 {
-  font-size: 24px;
-  font-weight: bold;
+/* Reset button styles */
+.nav-links li button {
+  background: none;
+  border: none;
+  padding: 0;
   margin: 0;
+  cursor: pointer;
 
+  color: #fff4e6;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+  font-family: "Inter", sans-serif;
+
+  position: relative;
+  padding-bottom: 4px;
+  transition: color 0.3s ease;
 }
 
-.breadcrumb-link {
-  text-decoration: none;
-  transition: color 0.3s ease-in-out;
-  color: #9dff00;
-}
-
-.breadcrumb-link:hover {
-  color: #81d100;
-  font-weight: lighter;
-  /* Light green hover effect */
-}
-
-.tiled-gradient {
-  position: relative; /* Ensure relative positioning for the pseudo-element */
-}
-
-.tiled-gradient::before {
-  content: '';
+/* Underline hover effect */
+.nav-links li button::after {
+  content: "";
   position: absolute;
-  top: 0;
   left: 0;
+  bottom: -2px;
+  width: 0%;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 200, 120, 0.8),
+    rgba(255, 160, 80, 0.8)
+  );
+  box-shadow: 0 0 8px rgba(255, 200, 120, 0.6);
+  transition: width 0.35s ease;
+}
+
+.nav-links li button:hover::after {
   width: 100%;
-  height: 100%;
-  background-image: 
-    url('../images/HolderTile.png');
-  opacity: 0.5; /* Adjust the opacity here */
-  z-index: -1; /* Place behind the content */
-  background-size: cover;
+}
+
+.nav-links li button:hover {
+  color: #ffe7c2;
+}
+
+/* Active page glow (optional but beautiful) */
+.nav-links li button.active {
+  color: #ffd9a0;
+  text-shadow: 0 0 12px rgba(255, 200, 120, 0.5);
+}
+
+.nav-links li button.active::after {
+  width: 100%;
+}
+
+/* Subtle grain overlay */
+.soulshine-nav::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: url("https://raw.githubusercontent.com/itsjusttravis/assets/main/grain/grain1.png");
+  opacity: 0.12;
+  mix-blend-mode: overlay;
 }

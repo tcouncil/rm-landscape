@@ -1,68 +1,174 @@
-/* Contact Section Styling */
-.contact-section {
-  background: linear-gradient(#292929d7, #9b9b9bd8);
-  color: #ccf38d;
-  padding: 30px;
+/* Fullscreen container */
+.contact-page {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Background image */
+.contact-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  filter: brightness(0.7);
+}
+
+/* Soft warm overlay */
+.contact-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    rgba(0, 0, 0, 0.25),
+    rgba(0, 0, 0, 0.45)
+  );
+}
+
+/* Centered content */
+.contact-content {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
-  font-family: "Alegreya SC", serif;
-  font-weight: 400;
-  font-style: normal;
+  color: #fff;
+  padding: 20px;
+  z-index: 5;
 }
 
-.contact-section h2 {
-  font-size: 1.5rem;
-  margin-bottom: 20px;
-  font-family: "Alegreya SC", serif;
-  font-weight: 400;
-  font-style: normal;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-  /* Text shadow for emphasis */
+/* Title */
+.contact-title {
+  font-size: 4rem;
+  font-family: "Cormorant Garamond", serif;
+  letter-spacing: 2px;
+  margin-bottom: 1rem;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
 }
 
+/* Subtitle */
+.contact-subtitle {
+  font-size: 1.4rem;
+  max-width: 700px;
+  line-height: 1.5;
+  opacity: 0.9;
+  margin-bottom: 2rem;
+  font-family: "Inter", sans-serif;
+}
+
+/* Contact form */
 .contact-form {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 15px;
+  width: 350px;
+  gap: 12px;
 }
 
 .contact-form label {
-  font-size: 16px;
-  font-family: "Alegreya SC", serif;
-  font-weight: 400;
-  font-style: normal;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-  margin-bottom: 5px;
+  text-align: left;
+  font-size: 1rem;
+  opacity: 0.9;
+  font-family: "Inter", sans-serif;
 }
 
 .contact-form input,
 .contact-form textarea {
   width: 100%;
-  max-width: 500px;
   padding: 10px;
-  border: 1px solid #a3c99c;
-  /* Light green border */
-  border-radius: 5px;
-  font-size: 14px;
-}
-
-.contact-form button {
-  background-color: #2a4400;
-  /* Deep green button */
-  color: #ccf38d;
-  /* White text */
+  border-radius: 6px;
   border: none;
-  padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer;
-  border-radius: 5px;
-  transition: background-color 0.3s ease-in-out;
+  font-size: 1rem;
+  font-family: "Inter", sans-serif;
+  outline: none;
 }
 
-.contact-form button:hover {
-  color: #daff9f;
-  /* White text */
-  font-style: italic;
-  background-color: #1b2c00be;
-  border: 1px solid rgba(0, 0, 0, 0.445);
+.contact-form input:focus,
+.contact-form textarea:focus {
+  box-shadow: 0 0 8px rgba(255, 200, 120, 0.6);
+}
+
+/* Button */
+.contact-button {
+  margin-top: 10px;
+  padding: 12px;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 200, 120, 0.9),
+    rgba(255, 160, 80, 0.9)
+  );
+  border: none;
+  border-radius: 6px;
+  color: #3a2a1a;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.contact-button:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
+
+/* SUCCESS MESSAGE */
+.success-message {
+  animation: fadeIn 2s ease forwards;
+}
+
+.success-message h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+}
+
+.success-message p {
+  font-size: 1.3rem;
+  opacity: 0.9;
+}
+
+/* Fade in */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* --------------------------------------------------
+   VINES (Guaranteed Visible)
+   -------------------------------------------------- */
+
+.vines-overlay {
+  position: fixed; /* forces above everything */
+  inset: 0;
+  background-image: url("https://raw.githubusercontent.com/itsjusttravis/assets/main/vines/vines-large.png");
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  z-index: 999999; /* nothing beats this */
+  pointer-events: none;
+  transition: opacity 1s ease-in-out;
+}
+
+.vines-overlay.active {
+  opacity: 1;
+}
+
+/* --------------------------------------------------
+   DIRT FADE
+   -------------------------------------------------- */
+
+.dirt-overlay {
+  position: fixed;
+  inset: 0;
+  background-image: url("https://raw.githubusercontent.com/itsjusttravis/assets/main/dirt/dirt.jpg");
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  z-index: 9999999;
+  pointer-events: none;
+  transition: opacity 1.5s ease-in-out;
+}
+
+.dirt-overlay.active {
+  opacity: 1;
 }

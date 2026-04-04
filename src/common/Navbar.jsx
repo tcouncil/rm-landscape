@@ -1,27 +1,20 @@
 import React from "react";
-import './Navbar.css'
+import './Navbar.css';
 
-export default function Navbar() {
+export default function Navbar({ setActivePage }) {
     return (
-        <nav className="breadcrumb-nav tiled-gradient">
-            <ul className="breadcrumb-list">
-                <h2 className="breadcrumb-item">Front Range Nativescape</h2>
-                <li className="breadcrumb-item">
-                    <a href="#about" className="breadcrumb-link">
-                        About
-                    </a>
-                </li>
-                <li className="breadcrumb-item">
-                    <a href="#resources" className="breadcrumb-link">
-                        Resources
-                    </a>
-                </li>
-                <li className="breadcrumb-item">
-                    <a href="#contact" className="breadcrumb-link">
-                        Contact
-                    </a>
-                </li>
-            </ul>
+        <nav className="soulshine-nav">
+            <div className="nav-inner">
+                <h2 className="nav-logo" onClick={() => setActivePage("landing")}>
+                    Soulshine Mountain
+                </h2>
+
+                <ul className="nav-links">
+                    <li><button onClick={() => setActivePage("restoration")}>Restoration Ecology</button></li>
+                    <li><button onClick={() => setActivePage("guide")}>Wilderness Guiding</button></li>
+                    <li><button onClick={() => setActivePage("contact")}>Contact</button></li>
+                </ul>
+            </div>
         </nav>
     );
 }

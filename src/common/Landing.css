@@ -1,62 +1,174 @@
-/* Landing Page Styling */
+/* --------------------------------------------------
+   Soulshine Mountain — Cinematic Enchanted Landing
+   -------------------------------------------------- */
+
+/* Fullscreen container */
 #landing-page {
+  width: 100%;
   height: 100vh;
+  position: relative;
+  overflow: hidden;
+  background: #000;
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative;
-  overflow: hidden;
-  border-bottom: 1px solid #9dff00;
 }
 
-/* Image container styling */
-#image-container {
-  position: relative;
-  height: 100%;
-  width: 100%;
-}
+/* --------------------------------------------------
+   Background Slideshow (Flicker-Free)
+   -------------------------------------------------- */
 
-/* Landing image styling */
-#landing-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  /* Ensures the image covers the entire container */
+.bg-layer {
   position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 1;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: brightness(0.75) saturate(1.25);
+  transition: opacity 2s ease-in-out;
 }
 
-/* Landing text styling */
-#landing-text {
+.bg-layer.visible {
+  opacity: 1;
+}
+
+.bg-layer.hidden {
+  opacity: 0;
+}
+
+/* Ken Burns slow zoom */
+.kenburns {
+  animation: kenburnsZoom 22s ease-in-out infinite alternate;
+}
+
+@keyframes kenburnsZoom {
+  0% {
+    transform: scale(1) translate(0, 0);
+  }
+  100% {
+    transform: scale(1.18) translate(2%, 2%);
+  }
+}
+
+/* --------------------------------------------------
+   Cinematic Overlays
+   -------------------------------------------------- */
+
+/* Warm mystical color grade */
+.color-grade {
   position: absolute;
-  z-index: 2;
+  inset: 0;
+  background: radial-gradient(
+    circle at 50% 40%,
+    rgba(255, 180, 90, 0.35),
+    rgba(80, 40, 10, 0.45),
+    rgba(0, 0, 0, 0.7)
+  );
+  mix-blend-mode: soft-light;
+  pointer-events: none;
+}
+
+/* Bloom glow */
+.bloom-glow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at 50% 35%,
+    rgba(255, 230, 180, 0.25),
+    transparent 60%
+  );
+  filter: blur(45px);
+  pointer-events: none;
+}
+
+/* Film grain */
+.film-grain {
+  position: absolute;
+  inset: 0;
+  background-image: url("https://raw.githubusercontent.com/itsjusttravis/assets/main/grain/grain1.png");
+  opacity: 0.18;
+  mix-blend-mode: overlay;
+  pointer-events: none;
+}
+
+/* --------------------------------------------------
+   Fog Layers (Ethereal Drift)
+   -------------------------------------------------- */
+
+.fog {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  pointer-events: none;
+}
+
+.fog-front {
+  background-image: url("https://raw.githubusercontent.com/itsjusttravis/assets/main/fog/fog1.png");
+  opacity: 0.25;
+  animation: fogDrift 60s linear infinite;
+}
+
+.fog-back {
+  background-image: url("https://raw.githubusercontent.com/itsjusttravis/assets/main/fog/fog2.png");
+  opacity: 0.15;
+  animation: fogDrift 90s linear infinite reverse;
+}
+
+@keyframes fogDrift {
+  0% { transform: translateX(-10%); }
+  100% { transform: translateX(10%); }
+}
+
+/* --------------------------------------------------
+   Dust Particles (Mystical Float)
+   -------------------------------------------------- */
+
+.dust {
+  position: absolute;
+  inset: 0;
+  background-image: url("https://raw.githubusercontent.com/itsjusttravis/assets/main/dust/dust1.png");
+  background-size: cover;
+  opacity: 0.12;
+  mix-blend-mode: screen;
+  animation: dustFloat 18s ease-in-out infinite alternate;
+}
+
+@keyframes dustFloat {
+  0% { transform: translateY(0) scale(1); }
+  100% { transform: translateY(-2%) scale(1.03); }
+}
+
+/* --------------------------------------------------
+   Text Content
+   -------------------------------------------------- */
+
+.hero-content {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
   text-align: center;
-  color: white;
-  width: 100%;
-  top: 50%;
-  transform: translateY(-50%);
-  padding: 20px;
+  z-index: 10;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
 }
 
-#landing-text h1,
-#landing-text h2 {
-  margin: 10px 0;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-  /* Subtle shadow for text contrast */
+.hero-title {
+  font-size: 4.5rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  margin-bottom: 1rem;
+  filter: drop-shadow(0 0 20px rgba(255, 200, 120, 0.4));
 }
 
-#landing-headline-container h5 {
-  margin-top: 15px;
-  font-size: 16px;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+.hero-phrase {
+  font-size: 2rem;
+  opacity: 0.9;
+  transition: opacity 2s ease-in-out;
 }
 
-
-#landing-phrase {
-  font-size: 4rem;
-  font-family: "Oooh Baby", cursive;
-  font-weight: 400;
-  font-style: normal;
-}
+/* --------------------------------------------------
+   END
+   -------------------------------------------------- */
